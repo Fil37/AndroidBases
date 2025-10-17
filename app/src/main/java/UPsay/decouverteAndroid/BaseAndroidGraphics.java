@@ -75,7 +75,9 @@ public class BaseAndroidGraphics extends View {
     {
         public void run() {
             timerHandler.postDelayed(this,100);
-            if(xText <= getWidth() && yText<=getHeight()){
+            //static int dl = sqrt((yText - xText);
+            //switch (){}
+            if(xText <= (getWidth() - 100)&& yText<=getHeight()){
                 xText = xText + 1;
                 yText = yText + 1;
             }
@@ -134,6 +136,9 @@ public class BaseAndroidGraphics extends View {
             pencheH	=	-(int)(sensorEvent.values[0]);
             pencheV = (int) (sensorEvent.values[1]);
             penche	=	pencheH*pencheH+pencheV* pencheV;
+            Log.i("acc:",String.format("pencheV %h", pencheV));
+            Log.i("acc:",String.format("penche %h", penche));
+            Log.i("acc:",String.format("pencheH %h", pencheH));
         }
     };
 
